@@ -1,22 +1,27 @@
+#!/usr/local/bin/python
+# coding=utf8
+
+import os, sys
 from urllib import response
 import requests
 
-API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
+
+API_URL = "https://api-inference.huggingface.co/models/lidiya/bart-large-xsum-samsum"
 headers = {"Authorization": f"Bearer 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"}
 
-	
+
 data='''
-The tower is 324 metres (1,063 ft) tall, about the same height as an 81-storey building, and the tallest structure in Paris. Its base is square, measuring 125 metres (410 ft) on each side. During its construction, the Eiffel Tower surpassed the Washington Monument to become the tallest man-made structure in the world, a title it held for 41 years until the Chrysler Building in New York City was finished in 1930. It was the first structure to reach a height of 300 metres. Due to the addition of a broadcasting aerial at the top of the tower in 1957, it is now taller than the Chrysler Building by 5.2 metres (17 ft). Excluding transmitters, the Eiffel Tower is the second tallest free-standing structure in France after the Millau Viaduct.
+भारत–भूमि
+की महानता उसकी विशाल जनसंख्या अथवा भू–क्षेत्र के कारण नहीं, अपितु उसकी भव्य और अनुकरणीय उदार परम्पराओं के कारण रही है। आचार, विचार, चिन्तन, भाषा और वेशभूषा की विविधताओं को राष्ट्रीयता के सूत्र में पिरोकर भारत ने मानवीय एकता का आदर्श उपस्थित किया है।धर्म के तत्व भारतीय मान्यता के अनुसार धैर्य, क्षमा, आत्मसंयम, चोरी न करना, पवित्र भावना, इन्द्रियों पर नियन्त्रण बुद्धिमत्ता, विद्या, सत्य और क्रोध न करना ये धर्म के दस लक्षण हैं।
 '''
-minL=int(input())
-maxL=int(input())
+
 
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
 
 output = query({
-    "inputs":data,
-    "parameters":{"min_length":minL,"max_length":maxL},
+	"inputs": data,
+	
 })
 print(output)
