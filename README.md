@@ -11,7 +11,7 @@ Urllib standard library
 
 Language Models: 
 
-https://api-inference.huggingface.co/models/lidiya/bart-large-xsum-samsu
+API_URL = "https://api-inference.huggingface.co/models/lidiya/bart-large-xsum-samsum"
 
 ![image](https://user-images.githubusercontent.com/70998986/198878001-2d36b4c5-79af-4a05-bc6b-4c5eba982c98.png)
 
